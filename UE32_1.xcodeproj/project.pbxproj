@@ -230,7 +230,7 @@
 				8EA8C99C1DA3815C0096BF75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		8EA8C99D1DA3815C0096BF75 /* Build configuration list for PBXNativeTarget "UE32_1" */ = {
 			isa = XCConfigurationList;
@@ -239,6 +239,7 @@
 				8EA8C99F1DA3815C0096BF75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
