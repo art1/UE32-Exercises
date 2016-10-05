@@ -4,4 +4,4 @@ This repository contains the programming exercises for the course "UE32 - Inform
 Each Exercise is done in a separate branch. The following PDF's contain the appropriate exercise sheets with the tasks:
 
 ### [Exercise 1](https://github.com/art1/UE32-Exercises/blob/master/Exercises-1-C%2B%2B.pdf) - C++ Programming in General
-everything's in branch [Ex1](../blob/Ex1/UE32_1/main.cpp) - only one file - all tasks written in void main(..). It is super beautiful spaghetti-code.
+everything's in branch [Ex1](../Ex1/UE32_1/main.cpp) - only one file - all tasks written in void main(..). It is super beautiful spaghetti-code.
