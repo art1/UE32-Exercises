@@ -30,12 +30,8 @@ long calcFak(long n){
 
 
 /** TODO check this shit */
-/*
-	iter as int
-	x in degree
- */
+
 double macLaurinSeries(int iter, int x){
-//	cout << "only works up to x = 8....\n";
 	double xf = x * M_PI / 180;
 	double sum = 0.0;
 	for (int i=0; i<=iter; i++) {
@@ -44,12 +40,10 @@ double macLaurinSeries(int iter, int x){
 		
 		double a = pow(xf, ((2 * i)+1));
 		double fak = calcFak((long)((2*i)+1));
-//		cout << "shit is: " <<  (u * a / fak)<<endl;
 		
 		double f = (u * a / fak);
 		if(std::isfinite(f)){
 			sum += (u * a / fak);
-//			cout << "sum is: "<<sum<<endl;
 		}
 	}
 	return sum;
@@ -88,17 +82,20 @@ int main(int argc, const char * argv[]) {
 //	*q = *p;
 //	cout << q << " "<<p;
 //	// insert code here...
-	cout << "Hello, World!\n";
+	if(argc == 1){
+	cout << "Help:!\n";
 	
 	cout << "parameters: [x] [y] \n x: 1 - coalcs the sum of integers up to y provided by user"<<endl;
 	cout << "x: 2 calculates y!, y provided by user"<<endl;
 	cout << "x: 3 calculates max and min of n provided y values"<<endl;
 	cout << "x: 4: approximates the sin function using mac laurin series\n";
+		return 0;
+	}
 	
 	if(atoi(argv[1]) == 1){
 		// we calculate sum of n first integers
 		if(argc != 3){
-			cout << "you're doin it wrong, biitch";
+			cout << "you're doin it wrong.";
 			return -1;
 		} else {
 			int n = atoi(argv[2]);
@@ -107,7 +104,7 @@ int main(int argc, const char * argv[]) {
 		}
 	} else if(atoi(argv[1]) == 2){
 		if(argc != 3){
-			cout << "you're doing it wrong, biiitch"<<endl;
+			cout << "you're doing it wrong."<<endl;
 			return -1;
 		} else {
 			int n = atoi(argv[2]);
@@ -137,7 +134,7 @@ int main(int argc, const char * argv[]) {
 		}
 	} else if (atoi(argv[1]) == 4){
 		if(argc > 2){
-			cout << "you can't use arguments here, biitch"<<endl;
+			cout << "you can't use arguments here."<<endl;
 			return -1;
 		} else {
 			int n = 0;
@@ -145,13 +142,13 @@ int main(int argc, const char * argv[]) {
 			cout << "please give a number for iterations:\n";
 			cin >> n;
 			if(cin.fail()){
-				cout << "dude! use numbers, are you stupid?\n";
+				cout << "dude! use numbers.\n";
 				return -1;
 			}
 			cout << n << " iterations, thank you. now give and value for x (the value to calculate the sin for)\n";
 			cin >> x;
 			if(cin.fail()){
-				cout << "dude! use numbers, are you stupid?\n";
+				cout << "dude! use numbers.\n";
 				return -1;
 			}
 			double res = macLaurinSeries(n, x);
@@ -172,12 +169,12 @@ int main(int argc, const char * argv[]) {
 		}
 	} else if (atoi(argv[1]) == 5){
 		if(argc > 2) {
-			cout << "you're doing it wrong, biiitch"<<endl;
+			cout << "you're doing it wrong."<<endl;
 			return -1;
 		} else {
 			std::vector<int> t;
 			for(int i=0;i<5;i++){
-				cout<<"please enter some numbers, biiitch:\n";
+				cout<<"please enter 5 numbers:\n";
 				int temp = -1;
 				cin >> temp;
 				if(cin.fail()){
