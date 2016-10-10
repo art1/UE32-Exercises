@@ -50,7 +50,6 @@ double macLaurinSeries(int iter, int x){
 }
 
 
-
 int main(int argc, const char * argv[]) {
 	
 	
@@ -83,12 +82,15 @@ int main(int argc, const char * argv[]) {
 //	cout << q << " "<<p;
 //	// insert code here...
 	if(argc == 1){
-	cout << "Help:!\n";
-	
-	cout << "parameters: [x] [y] \n x: 1 - coalcs the sum of integers up to y provided by user"<<endl;
-	cout << "x: 2 calculates y!, y provided by user"<<endl;
-	cout << "x: 3 calculates max and min of n provided y values"<<endl;
-	cout << "x: 4: approximates the sin function using mac laurin series\n";
+		cout << "Usage:\n";
+		cout << "parameters: [x] [y]"<<endl;
+		cout << "x: 1 - calcs the sum of integers up to [y] provided by user"<<endl;
+		cout << "x: 2 - calculates y!, [y] provided by user"<<endl;
+		cout << "x: 3 - calculates max and min of n provided [y1...yn] values "<<endl;
+		cout << "x: 4 - approximates the sine function using mac laurin series" <<endl;
+		cout << "x: 5 - calculates the average, the maximum and the minimum of 5 values (y parameter not needed)"<<endl;
+		cout << "x: 6 - calculates k over n combinations, [y] = [k n]"<<endl;
+		cout << "x: 7 - d..."<<endl;
 		return 0;
 	}
 	
@@ -183,21 +185,35 @@ int main(int argc, const char * argv[]) {
 				}
 				t.push_back(temp);
 			}
+			
 			// calculate the average
 			int sum = 0;
 			std::for_each(std::begin(t), std::end(t), [&] (int n) {sum +=n;});
 			float average = sum /t.size();
 			cout << "average is: "<<average<<endl;
+			
 			// calculate higher numbers
 			cout << "numbers higher than the average: ";
 			std::for_each(std::begin(t), std::end(t), [&] (int n) {if(n>average) cout << n << " ";});
 			cout << endl;
+			
 			//number equal the average
 			cout << "numbers equal the average: ";
 			std::for_each(std::begin(t), std::end(t), [&] (int n) {if(n == average) cout << n << " ";});
 			cout << endl;
+			
 			//
 		}
+	} else if (atoi(argv[1]) == 6){
+		if(argc != 4){
+			cout<<"wrong amount of parameters provided!\n";
+			return -1;
+		}
+		int n = atoi(argv[2]);
+		int k = atoi(argv[3]);
+		long res = calcFak(n) / (calcFak(k)*calcFak(n-k));
+		cout << n<<" over "<<k<<" is: "<<res;
+		return 0;
 	}
 	
 	
