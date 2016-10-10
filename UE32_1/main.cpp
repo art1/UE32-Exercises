@@ -48,6 +48,37 @@ double macLaurinSeries(int iter, int x){
 	}
 	return sum;
 }
+int arrRes[2];
+/**
+ * function to calculate quotient with division rest
+ * returns an array of ints, first value is quiotient, second is remainder
+ */
+int* divmod(int x, int y){
+	if(x < y){
+		arrRes[0] = 0;
+		arrRes[1] = x;
+		return arrRes;
+	}
+	if(x == y){
+		arrRes[0] = 1;
+		arrRes[1] = 0;
+		return arrRes;
+	}
+	if(x < y){
+		int i = 0;
+		int tmp = x;
+		while(tmp > y){
+			tmp -=y;
+			i++;
+		}
+		cout <<"divmod: "<<i<<"for x: "<<x<<" y: "<<y<<endl;
+		arrRes[0] = i;
+		arrRes[1] = tmp;
+		return arrRes;
+	}
+	return NULL;
+}
+
 
 
 int main(int argc, const char * argv[]) {
