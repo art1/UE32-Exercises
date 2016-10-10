@@ -87,7 +87,7 @@ int main(int argc, const char * argv[]) {
 //	int i;
 //	while (i< 10){
 //		i++;
-//		cout << i<<endl;
+//		cout << "hello"<<endl;
 //	}
 //	c d b a c  b bcd b a c
 	/*
@@ -120,7 +120,8 @@ int main(int argc, const char * argv[]) {
 		cout << "x: 3 - calculates max and min of n provided [y1...yn] values "<<endl;
 		cout << "x: 4 - approximates the sine function using mac laurin series" <<endl;
 		cout << "x: 5 - calculates the average, the maximum and the minimum of 5 values (y parameter not needed)"<<endl;
-		cout << "x: 6 - calculates k over n combinations, [y] = [k n]"<<endl;
+		cout << "x: 6 - calculates the average, maximum and minimum of up to 250 values given by user"<<endl;
+		cout << "x: 7 - calculates k over n combinations, [y] = [k n]"<<endl;
 		cout << "x: 7 - d..."<<endl;
 		return 0;
 	}
@@ -235,13 +236,36 @@ int main(int argc, const char * argv[]) {
 			
 			//
 		}
-	} else if (atoi(argv[1]) == 6){
+	} else if(atoi(argv[1]) == 6){
+		if(argc > 255){
+			cout << "you're doing it wrong, too much values!"<<endl;
+			return -1;
+		}
+		std::vector<int> t;
+		for(int i=2;i<argc;i++){
+			t.push_back(atoi(argv[i]));
+		}
+		int sum = 0;
+		std::for_each(std::begin(t), std::end(t), [&] (int n) {sum +=n;});
+		cout << "average is: "<<sum/t.size()<<endl;
+		cout << "numbers higher than the average: ";
+		std::for_each(std::begin(t), std::end(t), [&] (int n) {if(n>sum/t.size()) cout << n << " ";});
+		cout << "\nnumbers equal the average: ";
+		std::for_each(std::begin(t), std::end(t), [&] (int n) {if(n == sum/t.size()) cout << n << " ";});
+		cout << endl;
+		
+	} else if (atoi(argv[1]) == 7){
 		if(argc != 4){
 			cout<<"wrong amount of parameters provided!\n";
 			return -1;
 		}
 		int n = atoi(argv[2]);
 		int k = atoi(argv[3]);
+		if(k>n){
+			cout << "Im sorry Sam, I am afraid I cannot do that. second number cant be bigger than the first one."<<endl;
+			return -1;
+		}
+//		long res = calcFak(n);
 		long res = calcFak(n) / (calcFak(k)*calcFak(n-k));
 		cout << n<<" over "<<k<<" is: "<<res;
 		return 0;
