@@ -20,7 +20,6 @@ using namespace std;
  * calculates the faculty of given integer n (can't be greater than 12 because integer overflow)
  */
 long calcFak(long n){
-//	if(n > 12) return -1;
 	if(n > ULONG_MAX){
 		cout <<" can't calculate faculty for "<<n<<endl;
 	}
@@ -28,8 +27,6 @@ long calcFak(long n){
 	else return n * calcFak(n-1);
 }
 
-
-/** TODO check this shit */
 
 double macLaurinSeries(int iter, int x){
 	double xf = x * M_PI / 180;
@@ -48,70 +45,43 @@ double macLaurinSeries(int iter, int x){
 	}
 	return sum;
 }
-int arrRes[2];
+
+
 /**
  * function to calculate quotient with division rest
- * returns an array of ints, first value is quiotient, second is remainder
+ * @param:
+ *
  */
-int* divmod(int x, int y){
+void divmod(int x, int y, int *resQ, int *resR){
 	if(x < y){
-		arrRes[0] = 0;
-		arrRes[1] = x;
-		return arrRes;
+		*resQ = 0;
+		*resR = x;
 	}
 	if(x == y){
-		arrRes[0] = 1;
-		arrRes[1] = 0;
-		return arrRes;
+		*resQ = 1;
+		*resR = 0;
 	}
-	if(x < y){
+	if(x > y){
 		int i = 0;
 		int tmp = x;
 		while(tmp > y){
 			tmp -=y;
 			i++;
 		}
-		cout <<"divmod: "<<i<<"for x: "<<x<<" y: "<<y<<endl;
-		arrRes[0] = i;
-		arrRes[1] = tmp;
-		return arrRes;
+		*resQ = i;
+		*resR = tmp;
 	}
-	return NULL;
 }
 
 
+int digit_square(std::vector<int> digits){
+	int sumOfSquares=0;
+	std::for_each(std::begin(digits), std::end(digits), [&] (int n) {sumOfSquares += pow(n, 2);});
+	return sumOfSquares;
+}
 
 int main(int argc, const char * argv[]) {
-	
-	
-//	int i;
-//	while (i< 10){
-//		i++;
-//		cout << "hello"<<endl;
-//	}
-//	c d b a c  b bcd b a c
-	/*
-	 1: X = A_B and y = B
-	 Iterates 10 times
-	 displays the content of x
-	 writes anywhere int he memory
-	 sets x to 0 if x is equal to 3
-	 none of the other answers
-	 set of possible values information for the compiler to produe machine code set of possible operators
-	 copies the value of x into y
-	 puts the absolute of x into the value pointed by p
-	 sets to 0 the lement of array t
-	 
-	 
-	 */
-	
-//	int x = 6;
-//	int y = 0;
-//	int *p = &x;
-//	int *q = &y;
-//	*q = *p;
-//	cout << q << " "<<p;
-//	// insert code here...
+
 	if(argc == 1){
 		cout << "Usage:\n";
 		cout << "parameters: [x] [y]"<<endl;
@@ -265,10 +235,57 @@ int main(int argc, const char * argv[]) {
 			cout << "Im sorry Sam, I am afraid I cannot do that. second number cant be bigger than the first one."<<endl;
 			return -1;
 		}
-//		long res = calcFak(n);
 		long res = calcFak(n) / (calcFak(k)*calcFak(n-k));
 		cout << n<<" over "<<k<<" is: "<<res;
 		return 0;
+	} else if (atoi(argv[1]) == 8){
+		if(argc !=4 ){
+			cout << "wrong amount of parameters provided!\n";
+			return -1;
+		}
+		int resQ=0;
+		int resR=0;
+		divmod(atoi(argv[2]), atoi(argv[3]),&resQ,&resR);
+		cout <<"divmod: "<<resQ<<" with rest "<<resR<<" for x="<<atoi(argv[2])<<" y="<<atoi(argv[3])<<endl;
+	} else if (atoi(argv[1]) == 9){
+		if(argc != 3){
+			cout << "dude! that's a wrong amount of parameters!\n";
+			return -1;
+		}
+		int num = atoi(argv[2]);
+		cout << "number in reverse is: ";
+		int resQ=0;
+		int resR=0;
+		std::vector<int> digits;
+		while(num > 0){
+			divmod(num, 10, &resQ, &resR);
+			cout <<" "<<resR<<" ";
+			digits.push_back(resR);
+			num /= 10;
+		}
+		cout << "\nsum of squared digits is ";
+		cout << digit_square(digits)<<endl;
+	} else if (atoi(argv[1]) == 10){
+		if (argc > 2) {
+			cout << "you're doiing it wrooong\n";
+			return -1;
+		}
+		std::vector<int> values;
+		for (int i=1; i<201; i++) values.push_back(i);
+		int num=0;
+		for(int i=0;i<200;i++){
+			num = i;
+			int resR=0;
+			int resQ=0;
+			std::vector<int> digits;
+			while(num > 0){
+				divmod(num, 10, &resQ, &resR);
+				digits.push_back(resR);
+				num /= 10;
+			}
+			cout <<i<<" -> "<<digit_square(digits)<<endl;
+		}
+		
 	}
 	
 	
