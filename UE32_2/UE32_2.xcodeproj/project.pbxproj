@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8E3219051DACD56600D79280 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E3219041DACD56600D79280 /* main.cpp */; };
-		8E32190E1DACD5BE00D79280 /* point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E32190C1DACD5BE00D79280 /* point.cpp */; };
-		8E3219111DACD5D200D79280 /* triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E32190F1DACD5D200D79280 /* triangle.cpp */; };
-		8E3219141DACD5DD00D79280 /* polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E3219121DACD5DD00D79280 /* polygon.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,12 +25,6 @@
 /* Begin PBXFileReference section */
 		8E3219011DACD56600D79280 /* UE32_2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UE32_2; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E3219041DACD56600D79280 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		8E32190C1DACD5BE00D79280 /* point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = point.cpp; sourceTree = "<group>"; };
-		8E32190D1DACD5BE00D79280 /* point.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = point.hpp; sourceTree = "<group>"; };
-		8E32190F1DACD5D200D79280 /* triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangle.cpp; sourceTree = "<group>"; };
-		8E3219101DACD5D200D79280 /* triangle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = triangle.hpp; sourceTree = "<group>"; };
-		8E3219121DACD5DD00D79280 /* polygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = polygon.cpp; sourceTree = "<group>"; };
-		8E3219131DACD5DD00D79280 /* polygon.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = polygon.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				8E3219041DACD56600D79280 /* main.cpp */,
-				8E32190C1DACD5BE00D79280 /* point.cpp */,
-				8E32190D1DACD5BE00D79280 /* point.hpp */,
-				8E32190F1DACD5D200D79280 /* triangle.cpp */,
-				8E3219101DACD5D200D79280 /* triangle.hpp */,
-				8E3219121DACD5DD00D79280 /* polygon.cpp */,
-				8E3219131DACD5DD00D79280 /* polygon.hpp */,
 			);
 			path = UE32_2;
 			sourceTree = "<group>";
@@ -134,9 +119,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E3219141DACD5DD00D79280 /* polygon.cpp in Sources */,
-				8E32190E1DACD5BE00D79280 /* point.cpp in Sources */,
-				8E3219111DACD5D200D79280 /* triangle.cpp in Sources */,
 				8E3219051DACD56600D79280 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +246,7 @@
 				8E32190A1DACD56600D79280 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
