@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8E150C901DD1BD58002C2083 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E150C8F1DD1BD58002C2083 /* main.cpp */; };
+		8E150C9C1DD1C0C6002C2083 /* Place.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E150C9A1DD1C0C6002C2083 /* Place.cpp */; };
+		8E150CA01DD1C1BF002C2083 /* Way.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E150C9E1DD1C1BF002C2083 /* Way.cpp */; };
+		8E150CA31DD1C259002C2083 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E150CA11DD1C259002C2083 /* Map.cpp */; };
+		8E150CA61DD1D324002C2083 /* Path.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E150CA41DD1D324002C2083 /* Path.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,15 @@
 /* Begin PBXFileReference section */
 		8E150C8C1DD1BD58002C2083 /* UE32_3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UE32_3; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E150C8F1DD1BD58002C2083 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		8E150C9A1DD1C0C6002C2083 /* Place.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Place.cpp; sourceTree = "<group>"; };
+		8E150C9B1DD1C0C6002C2083 /* Place.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Place.hpp; sourceTree = "<group>"; };
+		8E150C9D1DD1C0FA002C2083 /* basic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = basic.h; sourceTree = "<group>"; };
+		8E150C9E1DD1C1BF002C2083 /* Way.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Way.cpp; sourceTree = "<group>"; };
+		8E150C9F1DD1C1BF002C2083 /* Way.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Way.hpp; sourceTree = "<group>"; };
+		8E150CA11DD1C259002C2083 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
+		8E150CA21DD1C259002C2083 /* Map.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Map.hpp; sourceTree = "<group>"; };
+		8E150CA41DD1D324002C2083 /* Path.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Path.cpp; sourceTree = "<group>"; };
+		8E150CA51DD1D324002C2083 /* Path.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Path.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +71,15 @@
 			isa = PBXGroup;
 			children = (
 				8E150C8F1DD1BD58002C2083 /* main.cpp */,
+				8E150C9A1DD1C0C6002C2083 /* Place.cpp */,
+				8E150C9B1DD1C0C6002C2083 /* Place.hpp */,
+				8E150C9D1DD1C0FA002C2083 /* basic.h */,
+				8E150C9E1DD1C1BF002C2083 /* Way.cpp */,
+				8E150C9F1DD1C1BF002C2083 /* Way.hpp */,
+				8E150CA11DD1C259002C2083 /* Map.cpp */,
+				8E150CA21DD1C259002C2083 /* Map.hpp */,
+				8E150CA41DD1D324002C2083 /* Path.cpp */,
+				8E150CA51DD1D324002C2083 /* Path.hpp */,
 			);
 			path = UE32_3;
 			sourceTree = "<group>";
@@ -119,7 +141,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E150C9C1DD1C0C6002C2083 /* Place.cpp in Sources */,
+				8E150CA31DD1C259002C2083 /* Map.cpp in Sources */,
+				8E150CA01DD1C1BF002C2083 /* Way.cpp in Sources */,
 				8E150C901DD1BD58002C2083 /* main.cpp in Sources */,
+				8E150CA61DD1D324002C2083 /* Path.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
